@@ -12,3 +12,10 @@ I need this code, but don't know where, perhaps should make some middleware, don
 
 Go code!
 */
+
+const server = require('./api/server')
+const port = 4040
+
+server.listen(port, ()=>{
+    console.log(`Server is running on ${port}`)
+})
