@@ -1,6 +1,8 @@
 const projects = require('./projects-model')
 
 
+
+
 function validateID(){
     return(req, res, next)=>{
         projects.getbyID(req.params.id)
@@ -21,7 +23,18 @@ function validateID(){
     }
 }
 
+function validateUser(){
+    return(req, res, next)=>{
+        if(!req.body.name){
+            return res.status(400).json({
+                message: "Missing user information"
+            })
+        }
+    }
+}
+
 
 module.exports = {
-    validateID
+    validateID,
+    validateUser,
 }
