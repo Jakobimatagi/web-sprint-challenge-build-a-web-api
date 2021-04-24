@@ -4,8 +4,7 @@ const projectsRouter = require('./projects/projects-router')
 const actionsRoter = require('./actions/actions-router')
 // Complete your server here!
 server.use(express.json())
-server.use('/projects', projectsRouter)
-server.use('/actions', actionsRoter)
+server.use(projectsRouter)
 // Do NOT `server.listen()` inside this file!
 
 
